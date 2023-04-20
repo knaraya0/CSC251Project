@@ -1,12 +1,8 @@
 public class Policy //create the Policy class
 {
    private double policyNumber; //create the instance field variables
-   private String policyFirstName;
-   private String policyLastName;
-   private double policyAge;
-   private String policySmokingStatus;
-   private double policyHeight;
-   private double policyWeight;
+   private PolicyHolder policyHolder;
+   public static counter;
    
    public Policy(double pn, String pfn, String plm, double pa, String pss, double ph, double pw) //the constructor which accepts arguments
    {
@@ -17,13 +13,9 @@ public class Policy //create the Policy class
       policySmokingStatus = pss;
       policyHeight = ph;
       policyWeight = pw;
+      counter++;
    }
-   public double getBMI() //method that calculates the BMI
-   {
-      double BMI = (policyWeight * 703) / (policyHeight * policyHeight);
-      return BMI;
-   }
-   public double getInsurancePolicyPrice()//method that calculates the insurance policy price
+      public double getInsurancePolicyPrice()//method that calculates the insurance policy price
    {
       double BMI = getBMI(); 
       double insurancePolicyPrice = 600;
