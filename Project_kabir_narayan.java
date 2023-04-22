@@ -3,6 +3,9 @@ public class Project_kabir_narayan
 { 
    public static void main(String[] args)
    {
+   String createMoreObject = "Y";
+   while (createMoreObject.equalsIgnoreCase("Y"))
+   {
       Scanner keyboard = new Scanner(System.in); //create a new keyboard scanner object
       
       System.out.print("Please enter the Policy Number: "); //get the policy number from the user
@@ -31,16 +34,16 @@ public class Project_kabir_narayan
       System.out.print("Please enter the Policyholder's Weight (in pounds): "); //get the policyholder's weight from the user
       double policyHolderWeight = keyboard.nextDouble();
       
-      Policy policy1 = new Policy(policyNumber, policyFirstName, policyLastName, policyAge, policySmokingStatus, policyHolderHeight, policyHolderWeight); //use the constructer to create a new instance of Policy with the values the user entered
+      PolicyHolder policyHolder1 = new PolicyHolder(policyFirstName, policyLastName, policyAge, policyHolderHeight, policyHolderWeight, policySmokingStatus); //use the constructer to create a new instance of Policy with the values the user entered
+      Policy policy1 = new Policy(policyNumber, policyHolder1);
       
-      System.out.println("Policy Number: " + policyNumber); //display the policy number
-      System.out.println("Provider Name: " + policyName); //display the provider name
-      System.out.println("Policyholder's First Name: " + policyFirstName); //display the policyholder's first name
-      System.out.println("Policyholder's Last Name: " + policyLastName); //display the policyholder's last name
-      System.out.println("Policyholder's Smoking Status: " + policySmokingStatus); //display the policyholder's smoking status
-      System.out.println("Policyholder's Height: " + policyHolderHeight); //display the policyholder's height
-      System.out.println("Policyholder's Weight: " + policyHolderWeight); //display the policyholder's weight
-      System.out.printf("Policyholder's BMI: %.2f\n", policy1.getBMI()); //display the policyholder's BMI
-      System.out.printf("Policy Price: $%.2f\n", policy1.getInsurancePolicyPrice()); //display the policy price
-   }
+      System.out.println(policy1);
+      
+      System.out.println("Create another object? Y/N");
+      createMoreObject = keyboard.nextLine();
+      createMoreObject = keyboard.nextLine();
+    }
+    System.out.println(Policy.counter);
+    
+   } 
 }
